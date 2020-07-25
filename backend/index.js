@@ -3,6 +3,8 @@ const   dotenv          = require("dotenv"),
         cors            = require("cors"),
         errorHandler    = require("./handlers/error"),
         authRoutes      = require("./routes/auth"),
+        messagesRoutes  = require("./routes/messages"),
+        { loginRequired, ensureCorrectUser } = require("./middleware/auth"),
         app             = express();
 
 dotenv.config();
@@ -12,6 +14,12 @@ app.use(express.json());
 
 // routes
 app.use("/api/auth", authRoutes);
+app.use(
+    "/api/users/:id/messages",
+    loginRequired,
+    ensureCorrectUser,
+    messagesRoutes
+);
 
 app.use(function(req, res, next) {
     let err = new Error("Not Found");

@@ -1,7 +1,7 @@
 const   mongoose    = require("mongoose"),
         dotenv      = require("dotenv");
 
-dotenv.config();
+dotenv.load();
 
 mongoose.set("debug", true);
 
@@ -17,3 +17,4 @@ mongoose.connect(process.env.MONGO_URL, {
 });
 
 module.exports.User = require("./user");
+module.exports.Message = require("./message");
