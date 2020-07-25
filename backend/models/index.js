@@ -1,7 +1,7 @@
 const   mongoose    = require("mongoose"),
         dotenv      = require("dotenv");
 
-dotenv.load();
+dotenv.config();
 
 mongoose.set("debug", true);
 
