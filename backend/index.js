@@ -1,6 +1,5 @@
 const   dotenv          = require("dotenv"),
         express         = require("express"),
-        cors            = require("cors"),
         errorHandler    = require("./handlers/error"),
         authRoutes      = require("./routes/auth"),
         messagesRoutes  = require("./routes/messages"),
@@ -9,10 +8,8 @@ const   dotenv          = require("dotenv"),
 
 dotenv.config();
 
-app.use(cors());
 app.use(express.json());
 
-// routes
 app.use("/api/auth", authRoutes);
 app.use(
     "/api/users/:id/messages",
