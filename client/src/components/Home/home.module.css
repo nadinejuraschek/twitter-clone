@@ -1,5 +1,11 @@
 .link {
-    background-color: crimson;
-    height: 3.6rem;
-    padding: 1rem;
+  background-color: #40779e;
+  border: none;
+  color: #ffffff;
+  margin-top: 2rem;
+  padding: 1rem 2rem;
+}
+
+.link:hover {
+  color: #ffffff;
 }
