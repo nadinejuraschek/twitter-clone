@@ -1,0 +1,16 @@
+.profile {
+  height: 20rem;
+  width: 20rem;
+}
+
+.profile img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.name {
+  font-weight: bold;
+  margin-top: 1rem;
+}
+

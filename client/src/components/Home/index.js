@@ -4,6 +4,9 @@ import { Link } from 'react-router-dom';
 // STYLES
 import styles from './home.module.css';
 
+// COMPONENTS
+import MessageTimeline from '../MessageTimeline';
+
 const Home = ({ currentUser }) => {
   if ( !currentUser.isAuthenticated ) {
     return (
@@ -20,7 +23,10 @@ const Home = ({ currentUser }) => {
   }
   return (
     <div>
-      <h1>You made it</h1>
+      <MessageTimeline
+        profileImageUrl={currentUser.user.profileImageUrl}
+        username={currentUser.user.username}
+      />
     </div>
   );
 };
