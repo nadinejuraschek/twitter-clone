@@ -36,7 +36,7 @@ const AuthForm = ({ heading, buttonText, register, onAuth, errors, history, remo
     <div className={styles.container}>
       <form onSubmit={handleSubmit}>
         <h2>{heading}</h2>
-        { errors.message && <div className={styles.message}>{errors.message}</div> }
+        { errors.message && <div className={styles.alert}>{errors.message}</div> }
         <label htmlFor='email'>E-Mail:</label>
         <input
           className={styles.authInput}

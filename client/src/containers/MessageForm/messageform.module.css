@@ -1,0 +1,9 @@
+.alert {
+    background-color: rgb(255, 130, 130, 0.6);
+    border: 1px solid rgb(194, 0, 0, 0.6);
+    font-size: 1.6rem;
+    padding: 1.5rem;
+    margin-top: -2.5rem;
+    margin-bottom: 2.5rem;
+    width: 100%;
+}

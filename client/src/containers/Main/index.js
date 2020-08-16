@@ -3,10 +3,12 @@ import { Switch, Route, withRouter, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { authUser } from '../../store/actions/auth';
 import { removeError } from '../../store/actions/errors';
+import withAuth from '../../hocs/withAuth';
 
 // COMPONENTS
 import Home from '../../components/Home';
 import AuthForm from '../../components/AuthForm';
+import MessageForm from '../MessageForm';
 
 // STYLES
 import styles from './main.module.css';
@@ -51,6 +53,11 @@ const Main = props => {
               />
             );
           }}
+        />
+        <Route
+          exact
+          path='/users/:id/messages/new'
+          component={withAuth(MessageForm)}
         />
       </Switch>
     </main>

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
-import { fetchMessages } from '../../store/actions/messages';
+import { fetchMessages, removeMessage } from '../../store/actions/messages';
 
 // STYLES
 import styles from './list.module.css';
@@ -8,10 +8,10 @@ import styles from './list.module.css';
 // COMPONENTS
 import MessageItem from '../../components/MessageItem';
 
-const MessageList = ({ messages }) => {
+const MessageList = ({ messages, removeMessage, currentUser }) => {
   useEffect(() => {
     fetchMessages();
-  }, []);
+  }, [messages]);
 
   let messageList = messages.map(message => (
     <MessageItem
@@ -20,16 +20,19 @@ const MessageList = ({ messages }) => {
       text={message.text}
       username={message.user.username}
       profileImageUrl={message.user.profileImageUrl}
+      removeMessage={removeMessage.bind(this, message.user._id, message._id)}
+      isCorrectUser={currentUser === message.user._id}
     />
   ));
 
-  return messageList;
+  return <ul>{messageList}</ul>;
 };
 
 function mapStateToProps(state) {
   return {
     messages: state.messages,
+    currentUser: state.currentUser.user.id,
   };
 };
 
-export default connect(mapStateToProps, { fetchMessages })(MessageList);
+export default connect(mapStateToProps, { fetchMessages, removeMessage })(MessageList);

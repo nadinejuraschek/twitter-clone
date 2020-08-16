@@ -6,7 +6,10 @@ import defaultProfile from '../../images/default-profile.png';
 // STYLES
 import styles from './message.module.css';
 
-const MessageItem = ({ date, profileImageUrl, text, username }) => {
+// ICONS
+import deleteIcon from '../../icons/delete.svg';
+
+const MessageItem = ({ date, profileImageUrl, text, username, removeMessage, isCorrectUser }) => {
   return (
     <li>
       <div className={styles.timelineImg}>
@@ -24,6 +27,11 @@ const MessageItem = ({ date, profileImageUrl, text, username }) => {
             </Moment>
           </span>
           <p>{text}</p>
+          { isCorrectUser &&
+            <a className={styles.delete} onClick={removeMessage}>
+              <img src={deleteIcon} alt="Delete Message" />
+            </a>
+          }
         </Link>
       </div>
     </li>
