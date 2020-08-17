@@ -32,9 +32,9 @@ const Navbar = ({ currentUser, signout }) => {
             </Link>
           </li>
           <li>
-            <a onClick={handleSignout}>
+            <button onClick={handleSignout}>
               Sign out
-            </a>
+            </button>
           </li>
         </ul>
         :

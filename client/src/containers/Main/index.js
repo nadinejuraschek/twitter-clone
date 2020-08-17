@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Switch, Route, withRouter, Redirect } from 'react-router-dom';
+import React from 'react';
+import { Switch, Route, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { authUser } from '../../store/actions/auth';
 import { removeError } from '../../store/actions/errors';
@@ -17,7 +17,7 @@ const Main = props => {
   const { authUser, errors, removeError, currentUser } = props;
 
   return (
-    <main>
+    <main className={styles.main}>
       <Switch>
         <Route exact path='/' render={props => <Home currentUser={currentUser} {...props} />} />
 

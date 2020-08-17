@@ -20,15 +20,14 @@ const Home = ({ currentUser }) => {
       </div>
       </>
     );
-  }
-  return (
-    <div>
+  } else {
+    return (
       <MessageTimeline
         profileImageUrl={currentUser.user.profileImageUrl}
         username={currentUser.user.username}
       />
-    </div>
-  );
+    );
+  };
 };
 
 export default Home;

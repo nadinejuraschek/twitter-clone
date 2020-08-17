@@ -3,6 +3,7 @@ const   dotenv          = require("dotenv"),
         errorHandler    = require("./handlers/error"),
         authRoutes      = require("./routes/auth"),
         messagesRoutes  = require("./routes/messages"),
+        db              = require("./models"),
         { loginRequired, ensureCorrectUser } = require("./middleware/auth"),
         app             = express();
 
@@ -18,23 +19,19 @@ app.use(
     messagesRoutes
 );
 
-app.get(
-    "/api/messages",
-    loginRequired,
-    async function(req, res, next) {
-        try {
-            let messages = await db.Message.find()
-                .sort({ createdAt: "desc" })
-                .populate("user", {
-                    username: true,
-                    profileImageUrl: true,
-                });
-            return res.status(200).json(messages);
-        } catch(err) {
-            return next(err);
-        };
+app.get("/api/messages", loginRequired, async function(req, res, next) {
+    try {
+      let messages = await db.Message.find()
+        .sort({ createdAt: "desc" })
+        .populate("user", {
+          username: true,
+          profileImageUrl: true
+        });
+      return res.status(200).json(messages);
+    } catch (err) {
+      return next(err);
     }
-);
+});
 
 app.use(function(req, res, next) {
     let err = new Error("Not Found");
