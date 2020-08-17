@@ -38,3 +38,17 @@ label {
     margin-bottom: 2.5rem;
     width: 100%;
 }
+
+.testLogin {
+    margin-top: 4rem;
+    text-align: center;
+}
+
+.guest {
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.guest:hover {
+    color: rgba(44,83,131,0.5);
+}

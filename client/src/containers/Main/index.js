@@ -26,6 +26,7 @@ const Main = props => {
           path='/signin'
           render={props => {
             return (
+              <div className={styles.container}>
               <AuthForm
                 removeError={removeError}
                 errors={errors}
@@ -34,6 +35,7 @@ const Main = props => {
                 heading='Welcome Back!'
                 {...props}
               />
+              </div>
             );
           }}
         />
@@ -42,6 +44,7 @@ const Main = props => {
           path='/register'
           render={props => {
             return (
+              <div className={styles.container}>
               <AuthForm
                 register
                 removeError={removeError}
@@ -51,6 +54,7 @@ const Main = props => {
                 heading='Join Megaphone today.'
                 {...props}
               />
+              </div>
             );
           }}
         />

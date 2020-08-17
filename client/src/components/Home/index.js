@@ -10,7 +10,7 @@ import MessageTimeline from '../MessageTimeline';
 const Home = ({ currentUser }) => {
   if ( !currentUser.isAuthenticated ) {
     return (
-      <>
+      <div className={styles.landing}>
       <h1>What's Happening?</h1>
       <h4>New to Megaphone?</h4>
       <div>
@@ -18,7 +18,7 @@ const Home = ({ currentUser }) => {
           Sign Up Here
         </Link>
       </div>
-      </>
+      </div>
     );
   } else {
     return (

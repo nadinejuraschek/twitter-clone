@@ -1,16 +1,19 @@
-.profile {
-  height: 20rem;
-  width: 20rem;
-}
-
-.profile img {
-  object-fit: cover;
-  height: 100%;
-  width: 100%;
+.aside {
+  display: none;
 }
 
 .name {
   font-weight: bold;
   margin-top: 1rem;
+  text-align: center;
+  width: 20rem;
 }
 
+@media only screen and (min-width: 600px) {
+  .aside {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+}

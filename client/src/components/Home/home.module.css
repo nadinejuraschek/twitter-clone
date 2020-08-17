@@ -1,3 +1,12 @@
+.landing {
+  min-height: calc(100vh - 11rem);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 2.4rem;
+}
+
 .link {
   background-color: #40779e;
   border: none;

@@ -6,6 +6,7 @@ import styles from './timeline.module.css';
 // COMPONENTS
 import MessageList from '../../containers/MessageList';
 import UserAside from '../UserAside';
+import NewMessage from './NewMessage';
 
 const MessageTimeline = ({ profileImageUrl, username }) => {
   return (
@@ -15,6 +16,7 @@ const MessageTimeline = ({ profileImageUrl, username }) => {
         username={username}
       />
       <MessageList />
+      <NewMessage />
     </div>
   );
 };

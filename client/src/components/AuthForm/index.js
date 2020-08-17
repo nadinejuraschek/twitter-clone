@@ -28,6 +28,22 @@ const AuthForm = ({ heading, buttonText, register, onAuth, errors, history, remo
       });
   };
 
+  const handleGuest = () => {
+    const testUser = {
+      email: 'user@test.com',
+      username: 'tester',
+      password: 'testUser1.',
+      profileImageUrl: '',
+    };
+    onAuth('signin', testUser)
+      .then(() => {
+        history.push('/');
+      })
+      .catch(() => {
+        return;
+      });
+  };
+
   history.listen(() => {
     removeError();
   });
@@ -79,6 +95,9 @@ const AuthForm = ({ heading, buttonText, register, onAuth, errors, history, remo
         />
         <button>{buttonText}</button>
       </form>
+      <div className={styles.testLogin}>
+        <p>Testing? <span className={styles.guest} onClick={() => handleGuest()}>Use Guest Account.</span></p>
+      </div>
     </div>
   );
 };

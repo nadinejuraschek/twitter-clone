@@ -1,0 +1,39 @@
+.message {
+  background-color: #ffffff;
+  box-shadow: 0 2px 2px rgba(44, 83, 131, 0.12);
+  padding: 1.5rem;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.userinfo {
+  display: flex;
+  align-items: center;
+}
+
+.name {
+  font-weight: bold;
+  margin-left: 1rem;
+}
+
+.date {
+  color: #979797;
+  font-size: 1.25rem;
+  text-align: right;
+}
+
+.body {
+  margin-top: 1.5rem;
+}
+
+p {
+  margin-bottom: 0;
+}
+
+@media only screen and (min-width: 900px) {
+
+}
