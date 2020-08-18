@@ -11,13 +11,13 @@ const Home = ({ currentUser }) => {
   if ( !currentUser.isAuthenticated ) {
     return (
       <div className={styles.landing}>
-      <h1>What's Happening?</h1>
-      <h4>New to Megaphone?</h4>
-      <div>
-        <Link className={styles.link} to='/register'>
-          Sign Up Here
-        </Link>
-      </div>
+        <h1>What's Happening?</h1>
+        <h3>New to Megaphone?</h3>
+        <div>
+          <Link className={styles.link} to='/register'>
+            Sign Up Here
+          </Link>
+        </div>
       </div>
     );
   } else {

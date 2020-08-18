@@ -1,0 +1,20 @@
+{
+  "name": "twitter-clone",
+  "version": "1.0.0",
+  "description": "A Twitter-like full stack node.js application. Built with React, Redux, and Node.js.",
+  "main": "backend/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "cd backend && npm run dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nadinejuraschek/twitter-clone.git"
+  },
+  "author": "Nadine Juraschek",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nadinejuraschek/twitter-clone/issues"
+  },
+  "homepage": "https://github.com/nadinejuraschek/twitter-clone#readme"
+}

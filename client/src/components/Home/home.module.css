@@ -7,14 +7,51 @@
   padding: 0 2.4rem;
 }
 
+.landing h1 {
+  font-size: 7rem;
+}
+
+.landing h3 {
+  font-size: 4rem;
+}
+
 .link {
   background-color: #40779e;
   border: none;
   color: #ffffff;
-  margin-top: 2rem;
+  font-size: 2rem;
+  margin-top: 4rem;
   padding: 1rem 2rem;
 }
 
 .link:hover {
   color: #ffffff;
+}
+
+@media only screen and (min-width: 900px) {
+  .landing {
+    background-image:
+      linear-gradient(#ffffff70, #ffffff70),
+      url(../../images/phone_bg.png);
+    background-size: cover;
+    background-position: center right;
+    min-height: calc(100vh - 11rem);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 2.4rem;
+  }
+
+  .landing h1 {
+    font-size: 3.6rem;
+  }
+
+  .landing h3 {
+    font-size: 2.6rem;
+  }
+
+  .link {
+    font-size: 1.75rem;
+  }
 }
